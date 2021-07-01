@@ -1,0 +1,12 @@
+body {
+    background-color: black;
+}
+
+.login {
+    width: 50%;
+}
+
+.test {
+    height: 100vh;
+    background-color: black;
+}
