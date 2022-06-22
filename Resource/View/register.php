@@ -1,4 +1,9 @@
 <?php
+session_start();
+if (isset($_SESSION["logged_username"])) {
+    header('Location: '."homepage.php");
+}
+
 require_once "../../igniter.php";
 $controller = new RegisterController();
 ?>
@@ -38,7 +43,7 @@ $controller = new RegisterController();
             Go to <a href="login.php">Login Page</a>
 
             <?php
-                echo $controller->register();
+                echo "<br><b>" . $controller->register() . "</b><br>";
             ?>
         </form>
     </div>

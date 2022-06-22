@@ -22,8 +22,12 @@ class LoginController
             $password_check = $this->model->select_password($username)['password'];
 
             if (password_verify($password_input, $password_check)) {
-                return 'Password is valid!';
+                session_start();
+                $_SESSION['logged_username'] = $_POST['username'];
+                echo $_SESSION['logged_username'];
+                header('Location: '."homepage.php");
             } else {
+                echo session_id();
                 return 'Invalid password.';
             }
 
